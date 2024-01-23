@@ -2,12 +2,36 @@
 <html lang="ja">
 <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="./css/uikit.min.css">
+    <link rel="stylesheet" href="./css/style.css">
     <title>sample</title>
     </head>
     <body>
-    <button id='click'>Search</button>
-    <button id='clear'>Clear</button>
-    <div><span id='type'></div>
+
+    <header>
+        <div class="header-container">
+            <h1>My Website</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="buttons">
+        <button class="uk-button uk-button-default" id='click'>Search</button>
+        <button class="uk-button uk-button-default" id='clear'>Clear</button>
+    </div>
+    <div class="result">
+        <span id='type'>
+    </div>
+
+    
     <script src="script.js"></script>
+    <script src="./js/uikit.min.js"></script>
+    <script src="./js/uikit-icons.min.js"></script>
 </body>
 </html>
