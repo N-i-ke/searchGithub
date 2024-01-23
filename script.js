@@ -45,7 +45,15 @@ function displayRepositories(data) {
   clearRepositories();
   for (let i = 0; i < data.length; i++) {
     newElement = document.createElement("div");
-    newElement.innerHTML = data[i].name;
+    linkElement = document.createElement("a");
+    linkElement.href = data[i].html_url; // リンクのURLを設定
+    linkElement.target = "_blank"; // 新しいタブで開くために
+
+    // <a>要素の中にテキスト（リポジトリ名）を追加
+    linkElement.innerText = data[i].name;
+    // <a>要素を新しい<div>要素に追加
+    newElement.appendChild(linkElement);
+    // 新しい<div>要素を#typeに追加
     type.appendChild(newElement);
     console.log(data[i].name);
   }
