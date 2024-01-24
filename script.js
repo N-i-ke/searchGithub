@@ -45,6 +45,7 @@ searchButton.addEventListener("click", () => {
     .catch((error) => {
       //usernameが存在しない時
       alert(`ユーザーネームが存在しません`);
+      clearRepositories();
     })
     .finally(() => {
       isFetching = false;
