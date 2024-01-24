@@ -31,10 +31,20 @@ searchButton.addEventListener("click", () => {
   console.log(url);
 
   fetch(url)
-    .then((response) => response.json())
+    .then((response) => {
+      // レスポンスが成功したか確認
+      if (!response.ok) {
+        throw new Error(`GitHub APIエラー: ${response.statusText}`);
+      }
+      return response.json();
+    })
     .then((data) => {
       console.log(data);
       displayRepositories(data);
+    })
+    .catch((error) => {
+      //usernameが存在しない時
+      alert(`ユーザーネームが存在しません`);
     })
     .finally(() => {
       isFetching = false;
