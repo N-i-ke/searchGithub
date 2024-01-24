@@ -8,14 +8,18 @@ let isFetching = false;
 let newElement;
 
 searchButton.addEventListener("click", () => {
-
-  alert(inputUser.value)
-  msg.innerText = inputUser.value
   
-  //inputに入力された値 
-  var userValue = inputUser.value;
-  console.log(userValue)
+  msg.innerText = inputUser.value;
 
+  //inputに入力された値
+  var userValue = inputUser.value;
+  console.log(userValue);
+
+  // 入力が空の場合はアラートを表示して処理を終了
+  if (!userValue) {
+    alert("usernameを入力してください");
+    return;
+  }
 
   if (isFetching) {
     console.log("Fetching True");
@@ -24,7 +28,7 @@ searchButton.addEventListener("click", () => {
 
   isFetching = true;
   let url = `https://api.github.com/users/${userValue}/repos`;
-  console.log(url)
+  console.log(url);
 
   fetch(url)
     .then((response) => response.json())
