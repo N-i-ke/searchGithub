@@ -44,6 +44,10 @@ nav a:hover {
   color: #66c2ff;
 }
 
+.tabList {
+  margin-top: 3rem;
+}
+
 .buttons {
   position: absolute;
   top: 40%;

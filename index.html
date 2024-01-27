@@ -21,7 +21,41 @@
         </div>
     </header>
 
-    <div class="input-block">
+    <div class="uk-flex uk-flex-center">
+        <ul class="tabList" uk-tab>
+            <li class="uk-active"><a href="#">Search UserName</a></li>
+            <li><a href="#">Search Orgnization</a></li>
+        </ul>
+    </div>
+    
+    <div class="uk-flex uk-flex-center">
+        <div class="uk-switcher uk-margin">
+            <div>
+                <div>
+                    <label for="">検索するユーザー名を入れてください</label>
+                    <input id="input-user" class="input-user uk-input uk-form-width-medium" type="text" name="username" placeholder="Search User">
+                    <div id="msg"></div>
+                </div>
+                <div>
+                    <button class="uk-button uk-button-default" id='search'>Search</button>
+                    <button class="uk-button uk-button-default" id='clear'>Clear</button>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <label for="">組織名で検索する</label>
+                    <input id="input-user" class="input-user uk-input uk-form-width-medium"  type="text" name="org" placeholder="Search Org">
+                    <div id="msg-org"></div>
+                </div>
+                <div>
+                    <button class="uk-button uk-button-primary" id='org-search'>Search</button>
+                    <button class="uk-button uk-button-primary" id='org-clear'>Clear</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="input-block">
         <label for="">検索するユーザー名を入れてください</label>
         <input id="input-user" class="input-user uk-input uk-form-width-medium" type="text" name="username" placeholder="Search User">
         <div id="msg"></div>
@@ -39,7 +73,7 @@
     <div class="buttons-org">
         <button class="uk-button uk-button-primary" id='org-search'>Search</button>
         <button class="uk-button uk-button-primary" id='org-clear'>Clear</button>
-    </div>
+    </div> -->
 
     <div class="result">
         <span id='type'>
@@ -48,6 +82,37 @@
     <div class="result-org">
         <span id="type-org"></span>
     </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const tabs = document.querySelectorAll('.tabList li');
+        const tabContents = document.querySelectorAll('.uk-switcher > div');
+
+        // 最初のタブとコンテンツをアクティブにする
+        tabs[0].classList.add('uk-active');
+        tabContents[0].classList.add('uk-active');
+    
+        tabs.forEach(function (tab, index) {
+            tab.addEventListener('click', function () {
+                // すべてのタブを非アクティブにする
+                tabs.forEach(function (t) {
+                    t.classList.remove('uk-active');
+                });
+
+                // クリックされたタブをアクティブにする
+                tab.classList.add('uk-active');
+
+                // すべてのコンテンツを非表示にする
+                tabContents.forEach(function (content) {
+                    content.classList.remove('uk-active');
+                });
+
+                // クリックされたタブに対応するコンテンツを表示する
+                tabContents[index].classList.add('uk-active');
+            });
+        });
+    });
+</script>
 
     
     <script src="script.js"></script>
