@@ -63,4 +63,11 @@ nav a:hover {
   top: 80%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.result-org {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }/*# sourceMappingURL=style.css.map */
