@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="./css/uikit.min.css">
     <link rel="stylesheet" href="./css/style.css">
-    <title>sample</title>
+    <title>Search Github</title>
     </head>
     <body>
 
     <header>
         <div class="header-container">
-            <h1>My Website</h1>
+            <h1 style="color: white;">Github</h1>
             <nav>
                 <ul>
                     <li><a href="#">Home</a></li>
@@ -32,24 +32,30 @@
         <div class="uk-switcher uk-margin">
             <div>
                 <div>
-                    <label for="">検索するユーザー名を入れてください</label>
+                    <label class="uk-label" for="" style="display: block;">検索するユーザー名を入れてください</label>
                     <input id="input-user" class="input-user uk-input uk-form-width-medium" type="text" name="username" placeholder="Search User">
                     <div id="msg"></div>
                 </div>
-                <div>
+                <div class="button-block">
                     <button class="uk-button uk-button-default" id='search'>Search</button>
                     <button class="uk-button uk-button-default" id='clear'>Clear</button>
+                </div>
+                <div class="result">
+                    <span id='type'>
                 </div>
             </div>
             <div>
                 <div>
-                    <label for="">組織名で検索する</label>
+                    <label class="uk-label" for="" style="display: block;">組織名で検索する</label>
                     <input id="input-user" class="input-user uk-input uk-form-width-medium"  type="text" name="org" placeholder="Search Org">
                     <div id="msg-org"></div>
                 </div>
-                <div>
+                <div class="button-block">
                     <button class="uk-button uk-button-primary" id='org-search'>Search</button>
                     <button class="uk-button uk-button-primary" id='org-clear'>Clear</button>
+                </div>
+                <div class="result-org">
+                    <span id="type-org"></span>
                 </div>
             </div>
         </div>
@@ -75,13 +81,13 @@
         <button class="uk-button uk-button-primary" id='org-clear'>Clear</button>
     </div> -->
 
-    <div class="result">
+    <!-- <div class="result">
         <span id='type'>
     </div>
 
     <div class="result-org">
         <span id="type-org"></span>
-    </div>
+    </div> -->
 
     <script>
     document.addEventListener('DOMContentLoaded', function () {
